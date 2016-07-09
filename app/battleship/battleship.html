@@ -8,9 +8,9 @@
   <div>
     <div class="win" ng-if="gameOver"><h1>{{currentTurn.playerBoard.belongsTo.name}} Won!</h1></div>
     <div class="turn" ng-if="!gameOver">
-      <div ng-if="!attackResult"><h1>Waiting for your move...{{currentTurn.playerBoard.belongsTo.name}}</h1></div>
+      <div ng-if="!attackResult"><h1>{{currentTurn.playerBoard.belongsTo.name}}, waiting for your move.</h1></div>
       <div ng-if="attackResult=='hit'">
-        <h1>HIT!<span ng-if="shipSunk">You sunk a {{shipSunk}}!</span></h1>
+        <h1>HIT! <span ng-if="shipSunk">{{shipSunk}} sunk!</span></h1>
       </div>
       <div ng-if="attackResult=='miss'"><h1>MISS!</h1></div>
       <div class="result">
