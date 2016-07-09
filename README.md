@@ -1,8 +1,8 @@
 # Battleship
 
-Built with AngularJS. 
-Ships are initialized randomly and there are 2 players with 5 ships each. 
-There is a 'debug board' button, if you want to see where the opponent's ships are for testing purposes. 
+Built with AngularJS.   
+Ships are initialized randomly and there are 2 players with 5 ships each.  
+There is a 'debug board' button, if you want to see where the opponent's ships are for testing purposes.  
 ### Prerequisites
 
 There's no server backend but you need to run the node server to serve up project files using local webserver to avoid issues with security restrictions in the browser. You must have node.js and its package manager (npm) installed. You can get them from http://nodejs.org/. 
