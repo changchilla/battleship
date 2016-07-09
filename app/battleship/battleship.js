@@ -47,12 +47,12 @@ angular.module('myApp.battleship', ['ngRoute'])
     };
     
     $scope.takeATurn = function(square) {
-      if($scope.attackResult) {
-        alert('Please switch players');
-        return;
-      }
       if($scope.gameOver) {
         alert('The game is over!');
+        return;
+      }
+      if($scope.attackResult) {
+        alert('Please switch players');
         return;
       }
       $scope.attackResult = square.attack();
