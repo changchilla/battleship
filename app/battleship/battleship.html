@@ -1,0 +1,50 @@
+<div ng-app="myApp.battleship" ng-init="init()" ng-controller="BattleshipCtrl as battleShipCtrl" class="battleship">
+  <div class="legend">
+    Legend:
+    <div class="ship">ship</div>
+    <div class="hit">hit</div>
+    <div class="miss">miss</div>
+  </div>
+  <div>
+    <div class="win" ng-if="gameOver"><h1>{{currentTurn.playerBoard.belongsTo.name}} Won!</h1></div>
+    <div class="turn" ng-if="!gameOver">
+      <div ng-if="!attackResult"><h1>Waiting for your move...{{currentTurn.playerBoard.belongsTo.name}}</h1></div>
+      <div ng-if="attackResult=='hit'">
+        <h1>HIT!<span ng-if="shipSunk">You sunk a {{shipSunk}}!</span></h1>
+      </div>
+      <div ng-if="attackResult=='miss'"><h1>MISS!</h1></div>
+      <div class="result">
+        <button ng-if="attackResult" ng-click="switchTurns()">Switch to {{currentTurn.opponentBoard.belongsTo.name}}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="opponent-board">
+    <h4>Opponent Board ({{currentTurn.opponentBoard.belongsTo.name}}):</h4>
+    <span>Ships Sunk: {{currentTurn.opponentBoard.numShipsSunk}}</span>
+    <span>Ships Remaining: {{currentTurn.opponentBoard.numShips - currentTurn.opponentBoard.numShipsSunk}}</span>
+    <div ng-repeat="row in currentTurn.opponentBoard.grid">
+      <div ng-repeat="square in row" class="square-in-row" ng-class="square.state" ng-click="takeATurn(square)"></div>
+    </div>
+  </div>
+  <div class="your-board">
+    <h4>Your Board:</h4>
+    <span>Ships Sunk: {{currentTurn.playerBoard.numShipsSunk}}</span>
+    <span>Ships Remaining: {{currentTurn.playerBoard.numShips - currentTurn.playerBoard.numShipsSunk}}</span>
+    <div ng-repeat="row in currentTurn.playerBoard.grid">
+      <div ng-repeat="square in row" class="square-in-row" ng-class="square.state"></div>
+    </div>
+  </div>
+  <div class="opponent-debugging-board">
+    <button ng-click="toggleDebugBoard()">
+      <span ng-if="!showDebugBoard">Show Debug Board</span>
+      <span ng-if="showDebugBoard">Hide Debug Board</span>
+    </button>
+    <div ng-if="showDebugBoard">
+      <h4>Opponent Board (for debugging):</h4>
+      <div ng-repeat="row in currentTurn.opponentBoard.grid">
+          <div ng-repeat="square in row" class="square-in-row" ng-class="square.state"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+/* app css stylesheet */
+
+.square-in-row {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 6.4px;
+}
+.miss {
+  background-color: cadetblue;
+}
+.hit {
+  background-color: red;
+}
+.no_ship, .opponent-board .ship {
+  background-color: grey;
+}
+
+.opponent-board .no_ship:hover, .opponent-board .ship:hover {
+  background: gold;
+  cursor: pointer;
+}
+
+.your-board .ship, .opponent-debugging-board .ship, .legend .ship {
+  background-color: black;
+}
+
+.opponent-board, .your-board {
+  display: inline-block;
+  margin: 10px;
+}
+
+.opponent-debugging-board {
+  margin: 10px;
+}
+.battleship {
+  margin-left: 10px;
+}
+
+.legend {
+  margin: 10px;
+}
+.legend div {
+  width: 50px;
+  height: 25px;
+  display:inline-block;
+  text-align: center;
+  color: gold;
+}
+
+.turn, .win {
+  margin: 10px;
+}
+
+.result {
+  height: 15px;
+}
