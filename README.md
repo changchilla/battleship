@@ -2,10 +2,13 @@
 
 Built with AngularJS. 
 Ships are initialized randomly and there are 2 players with 5 ships each. 
+### Prerequisites
+
+You must have node.js and its package manager (npm) installed. You can get them from http://nodejs.org/. There's no server backend but you need to run the node server to serve up project files using local webserver to avoid issues with security restrictions in the browser.
 
 ### Run the Application
 
-There's no server backend but you need to run node server to serve up project files using local webserver to avoid issues with security restrictions in the browser. Running command below will do an npm install, bower install, and start the web server. See package.json for more details. 
+Running command below will do an npm install, bower install, and start the web server. See package.json for more details. 
 
 ```
 npm start
